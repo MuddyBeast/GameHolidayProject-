@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHolidayProject-.CSharp.Plugins", "GameHolidayProject-.CSharp.Plugins.csproj", "{8D60723D-5FDD-40FD-6313-3B47B4BE81DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHolidayProject-.CSharp", "GameHolidayProject-.CSharp.csproj", "{1DAE9832-88DF-35F1-93C4-D55FAF7FA1AD}"

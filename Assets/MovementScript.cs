@@ -9,6 +9,9 @@ public class MovementScript : MonoBehaviour
     float currentSpeed;
     public float movementSpeedIncrease;
     public float maxSpeed;
+    public float runSpeed;
+    bool isRunning;
+
 
     void Start()
     {
@@ -33,7 +36,17 @@ public class MovementScript : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(h * currentSpeed, v * currentSpeed);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            isRunning = true;
+        else
+            if (isRunning == true)
+                isRunning = false;
+
+        if (isRunning)
+            rb.velocity = new Vector2(h * (currentSpeed + runSpeed), v * (currentSpeed + runSpeed));
+        else
+            rb.velocity = new Vector2(h * currentSpeed, v * currentSpeed);
 
         if (maxSpeed > currentSpeed)
         {
@@ -42,8 +55,8 @@ public class MovementScript : MonoBehaviour
                 currentSpeed = maxSpeed;
         }
         if (h == 0 && v == 0)
-            currentSpeed = startingSpeed;        
-        
+            currentSpeed = startingSpeed;
+
 
 
         //if (Input.GetAxisRaw("Horizontal") > 0)
